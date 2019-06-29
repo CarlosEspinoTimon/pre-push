@@ -17,7 +17,7 @@ access-backend:
 	sudo docker exec -it $(backend) bash
 
 # Install a module
-# usage --> make backend-install-module module=MODULE NAME
+# usage --> make backend-install-module module=MODULE NAME 
 backend-install-module:
 	sudo docker exec -t $(backend) pipenv install $(module)
 
