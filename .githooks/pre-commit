@@ -1,0 +1,15 @@
+BRANCH=`git rev-parse --abbrev-ref HEAD`
+
+if [["$BRANCH" == "master"]];
+then
+    echo "Estas en master"
+fi
+
+if [ `date +%w` -ge 5 ]; 
+then
+  echo "Please, do not push code before the weekend!"
+  exit 1
+fi
+(cd local_environment && make backend-tests)
+exit $?
+
