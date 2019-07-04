@@ -20,7 +20,7 @@ class Server(BaseTestClass):
 
         self.assertEqual(res.status_code, 200)
         data = json.loads(res.get_data(as_text=True))
-        self.assertEqual(data, 'The server is running!!!!')
+        self.assertEqual(data, 'The server is running!!')
 
 
 if __name__ == '__main__':
