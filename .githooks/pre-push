@@ -1,4 +1,4 @@
-echo "Skip pre-commit hooks with --no-verify (not recommended)."
+echo "Skip pre-push hooks with --no-verify (not recommended)."
 
 BRANCH=`git rev-parse --abbrev-ref HEAD`
 if [ "$BRANCH" = "master" ]; 
@@ -12,6 +12,5 @@ then
   echo "Please, do not push code to develop before the weekend!"
   exit 1
 fi
-(cd local_environment && make backend-tests)
-exit $?
+
 

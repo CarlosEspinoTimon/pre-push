@@ -1,0 +1,4 @@
+echo "Skip pre-commit hooks with --no-verify (not recommended)."
+
+(cd local_environment && make backend-tests)
+exit $?
