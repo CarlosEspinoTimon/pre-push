@@ -1,15 +1,15 @@
-echo "Skip pre-push hooks with --no-verify (not recommended)."
+echo "Skip pre-push hooks with --no-verify (not recommended).\n"
 
 BRANCH=`git rev-parse --abbrev-ref HEAD`
 if [ "$BRANCH" = "master" ]; 
 then
-  echo "You are on branch $BRANCH. You must not push to master"
+  echo "You are on branch $BRANCH. You must not push to master\n"
   exit 1
 fi
 
-if [ `date +%w` -ge 5 ] && [ "$BRANCH" = "develop" ]; 
+if [ `date +%w` -ge 5 ] && [ "$BRANCH" = "master" ]; 
 then
-  echo "Please, do not push code to develop before the weekend!"
+  echo "Please, do not push code to develop before the weekend!\n"
   exit 1
 fi
 
